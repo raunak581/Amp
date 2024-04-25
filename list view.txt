@@ -1,0 +1,79 @@
+activity.xml 
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<Button android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:id="@+id/btn"
+android:text="Click me to view list"
+android:layout_marginTop="200dp"
+android:layout_marginLeft="90dp"/>
+</LinearLayout>
+
+string.xml
+<resources>
+<string name="app_name">list</string>
+<array name="insert_list">
+<item>one</item>
+<item>two</item>
+<item>three</item>
+<item>four</item>
+<item>five</item>
+<item>six</item>
+<item>seven</item>
+<item>eight</item>
+<item>nine</item>
+<item>ten</item>
+</array>
+</resources>
+
+list_view.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<ListView
+ xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:tools="http://schemas.android.com/tools"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ tools:context=".list_view" android:entries="@array/insert_list">
+</ListView>
+
+list_view.java
+
+package com.rohit.list
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+class list_view : AppCompatActivity() {
+ override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_list_view)
+ }
+}
+
+main.java
+
+package com.rohit.list
+import android.content.Intent
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+class MainActivity : AppCompatActivity() {
+ override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_main)
+ btn.setOnClickListener {
+ val intent =Intent(this, list_view::class.java)
+ startActivity(intent)
+ }
+ }
+}
+
+
+

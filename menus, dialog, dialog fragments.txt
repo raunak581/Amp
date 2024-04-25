@@ -1,0 +1,95 @@
+main.java 
+
+( this is for alert dialog )
+
+val alertDialog: AlertDialog? = activity?.let {
+ val builder = AlertDialog.Builder(it)
+ builder.apply {
+ setPositiveButton(R.string.ok,
+ DialogInterface.OnClickListener { dialog, id ->
+ // User clicked OK button
+ })
+ setNegativeButton(R.string.cancel,
+ DialogInterface.OnClickListener { dialog, id ->
+ // User cancelled the dialog
+ })
+ }
+ // Set other dialog properties
+ ...
+ // Create the AlertDialog
+ builder.create()
+}
+
+
+
+
+activity.xml
+
+<?xml version=”1.0″ encoding=”utf-8″?>
+<menu xmlns:android=”http://schemas.android.com/apk/res/android&#8221;
+xmlns:app=”http://schemas.android.com/apk/res-auto”&gt;
+<item
+android:id=”@+id/menu_1″
+android:icon=”@drawable/ic_menu_1″
+android:title=”Menu 1″
+app:showAsAction=”always” />
+https://E-next.in
+Khan S. Alam 36 https://E-next.in
+<item
+android:id=”@+id/menu_2″
+android:icon=”@drawable/ic_menu_2″
+android:title=”Menu 2″ />
+<item
+android:id=”@+id/menu_3″
+android:icon=”@drawable/ic_menu_3″
+android:title=”Menu 3″ />
+<item
+android:id=”@+id/menu_4″
+android:icon=”@drawable/ic_menu_4″
+android:title=”Menu 4″ />
+</menu>
+
+
+main.java 
+
+package rohit.com
+import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
+class MainActivity : AppCompatActivity() {
+ override fun onCreate(savedInstanceState: Bundle?) {
+ super.onCreate(savedInstanceState)
+ setContentView(R.layout.activity_main)
+ }
+ override fun onCreateOptionsMenu(menu: Menu): Boolean {
+ menuInflater.inflate(R.menu.main, menu)
+ return true
+ }
+ override fun onOptionsItemSelected(item: MenuItem): Boolean {
+ when (item.itemId) {
+ R.id.menu_1 -> {
+ Toast.makeText(this, “Menu 1 is selected”, Toast.LENGTH_SHORT).show()
+ return true
+ }
+ R.id.menu_2 -> {
+ Toast.makeText(this, “Menu 2 is selected”, Toast.LENGTH_SHORT).show()
+ return true
+ }
+ R.id.menu_3 -> {
+ Toast.makeText(this, “Menu 3 is selected”, Toast.LENGTH_SHORT).show()
+ return true
+ }
+ R.id.menu_4 -> {
+ Toast.makeText(this, “Menu 4 is selected”, Toast.LENGTH_SHORT).show()
+ return true
+ }
+ else -> return super.onOptionsItemSelected(item)
+ }
+ }
+}
+
+
+
+

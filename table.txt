@@ -1,0 +1,115 @@
+activity.xml
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".MainActivity">
+<TableLayout android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_marginLeft="50dp"
+android:layout_marginTop="150dp">
+<TableRow>
+<Button
+android:id="@+id/btn1"
+android:text="1"
+android:layout_gravity="center"
+/>
+<Button
+android:id="@+id/btn2"
+android:text="2"
+android:layout_gravity="center"
+
+/>
+<Button
+android:id="@+id/btn3"
+android:text="3"
+android:layout_gravity="center"
+/>
+</TableRow>
+<TableRow>
+<Button
+android:id="@+id/btn4"
+android:text="4"
+
+android:layout_gravity="center"
+/>
+<Button
+android:id="@+id/btn5"
+android:text="5"
+android:layout_gravity="center"
+
+/><Button
+android:id="@+id/btn6"
+android:text="6"
+android:layout_gravity="center"
+
+/>
+</TableRow>
+<TableRow>
+<Button
+android:id="@+id/btn7"
+android:text="7"
+
+android:layout_gravity="center"
+
+/>
+<Button
+android:id="@+id/btn8"
+android:text="8"
+android:layout_gravity="center"
+
+/><Button
+android:id="@+id/btn9"
+android:text="9"
+android:layout_gravity="center"
+
+/>
+</TableRow>
+</TableLayout>
+</LinearLayout>
+
+
+main.java
+
+package com.r.table_view
+import android.support.v7.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.toast
+class MainActivity : AppCompatActivity() {
+override fun onCreate(savedInstanceState: Bundle?) {
+super.onCreate(savedInstanceState)
+setContentView(R.layout.activity_main)
+btn1.setOnClickListener {
+toast("1")
+}
+btn2.setOnClickListener {
+toast("2")
+}
+btn3.setOnClickListener {
+toast("3")
+}
+btn4.setOnClickListener {
+toast("4")
+}
+btn5.setOnClickListener {
+toast("5")
+}
+btn6.setOnClickListener {
+toast("6")
+}
+btn7.setOnClickListener {
+toast("7")
+}
+btn8.setOnClickListener {
+toast("8")
+}
+btn9.setOnClickListener {
+toast("9")
+}
+}
+}
